@@ -4,7 +4,9 @@ const { getAllPhotos, getPhoto, createPhoto, deletePhoto, updatePhoto } = requir
 
 // INDEX
 pinterest.get("/", async (req, res) => {
+  console.log('trying to get pics')
     const allPhotos = await getAllPhotos();
+    console.log(allPhotos)
     if (allPhotos[0]) {
         res.status(200).json(allPhotos);
       } else {
